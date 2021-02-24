@@ -716,7 +716,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="bugreportClicked:" target="XfG-lQ-9wD" id="Gqv-xZ-rUY"/>
+                                    <action selector="bugReportClicked:" target="XfG-lQ-9wD" id="Gqv-xZ-rUY"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-Py-OiK">
@@ -761,15 +761,39 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6tx-Mi-6Jn">
+                                <rect key="frame" x="9" y="8" width="25" height="25"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9JX-3J-D2C">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showHelp:" target="XfG-lQ-9wD" id="IjM-s3-29Z"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-vq-pjU">
+                                <rect key="frame" x="281" y="5" width="97" height="32"/>
+                                <buttonCell key="cell" type="push" title="Advise Me" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sv3-1K-UeE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="adviseMeClicked:" target="XfG-lQ-9wD" id="JeT-v0-deg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="j8t-SH-WG8" secondAttribute="trailing" constant="12" id="5oF-Uy-6Ls"/>
                             <constraint firstItem="rMr-xz-06Y" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="8e6-jx-bVf"/>
+                            <constraint firstItem="j8t-SH-WG8" firstAttribute="leading" secondItem="iZ5-vq-pjU" secondAttribute="trailing" constant="12" id="B5X-AZ-bG6"/>
                             <constraint firstItem="CVf-Py-OiK" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="GDx-DR-U2B"/>
+                            <constraint firstItem="6tx-Mi-6Jn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="12" id="HKr-hM-WAk"/>
                             <constraint firstItem="CVf-Py-OiK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="OxS-9y-FOm"/>
                             <constraint firstItem="rMr-xz-06Y" firstAttribute="top" secondItem="CVf-Py-OiK" secondAttribute="bottom" constant="24" id="V3Y-Wf-b5Q"/>
+                            <constraint firstAttribute="bottom" secondItem="6tx-Mi-6Jn" secondAttribute="bottom" constant="12" id="bNQ-SD-nKS"/>
                             <constraint firstItem="rMr-xz-06Y" firstAttribute="trailing" secondItem="CVf-Py-OiK" secondAttribute="trailing" id="e5o-73-fbs"/>
                             <constraint firstAttribute="bottom" secondItem="j8t-SH-WG8" secondAttribute="bottom" constant="12" id="moh-HQ-1QO"/>
+                            <constraint firstAttribute="bottom" secondItem="iZ5-vq-pjU" secondAttribute="bottom" constant="12" id="xKx-Nd-EeD"/>
                             <constraint firstItem="rMr-xz-06Y" firstAttribute="leading" secondItem="CVf-Py-OiK" secondAttribute="leading" id="y5w-9g-yMb"/>
                         </constraints>
                     </view>
@@ -781,6 +805,33 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Pb6-Ha-qhs">
+            <objects>
+                <viewController storyboardIdentifier="HelpView" showSeguePresentationStyle="single" id="rF0-J3-o5y" sceneMemberID="viewController">
+                    <view key="view" id="sZN-m3-YCR">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3zB-6E-QD6">
+                                <rect key="frame" x="193" y="142" width="65" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Help label" id="GSW-s3-Ed5">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="3zB-6E-QD6" firstAttribute="centerY" secondItem="sZN-m3-YCR" secondAttribute="centerY" id="fVK-ps-4IK"/>
+                            <constraint firstItem="3zB-6E-QD6" firstAttribute="centerX" secondItem="sZN-m3-YCR" secondAttribute="centerX" id="zvU-KQ-cob"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="4PF-mA-5zJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="666"/>
         </scene>
     </scenes>
 </document>
