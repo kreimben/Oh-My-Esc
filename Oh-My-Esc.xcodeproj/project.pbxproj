@@ -11,6 +11,7 @@
 		51DA77D325A886BA00E6415B /* MatsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA77D225A886BA00E6415B /* MatsterViewController.swift */; };
 		51DA77D525A886BD00E6415B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DA77D425A886BD00E6415B /* Assets.xcassets */; };
 		51DA77D825A886BD00E6415B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DA77D625A886BD00E6415B /* Main.storyboard */; };
+		51FA292725E6AEF90055F6CF /* OMSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA292625E6AEF90055F6CF /* OMSoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		51DA77D725A886BD00E6415B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51DA77D925A886BD00E6415B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51DA77DA25A886BD00E6415B /* Oh_My_Esc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Oh_My_Esc.entitlements; sourceTree = "<group>"; };
+		51FA292625E6AEF90055F6CF /* OMSoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMSoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				51DA77D025A886BA00E6415B /* AppDelegate.swift */,
 				51DA77D225A886BA00E6415B /* MatsterViewController.swift */,
+				51FA292625E6AEF90055F6CF /* OMSoundManager.swift */,
 				51DA77D425A886BD00E6415B /* Assets.xcassets */,
 				51DA77D625A886BD00E6415B /* Main.storyboard */,
 				51DA77D925A886BD00E6415B /* Info.plist */,
@@ -132,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51FA292725E6AEF90055F6CF /* OMSoundManager.swift in Sources */,
 				51DA77D325A886BA00E6415B /* MatsterViewController.swift in Sources */,
 				51DA77D125A886BA00E6415B /* AppDelegate.swift in Sources */,
 			);
