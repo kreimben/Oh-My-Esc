@@ -25,7 +25,9 @@ class MatsterViewController: NSViewController {
             let monitor = NSEvent.addGlobalMonitorForEvents(matching: mask) { (event) in
                 
                 switch event.keyCode {
-                case 53: print("ESC pressed!")
+                case 53:
+//                    print("ESC pressed!")
+                    OMSoundManager.shared.playSound()
                 default: break
                 }
             }
@@ -86,8 +88,23 @@ class MatsterViewController: NSViewController {
 extension MatsterViewController {
     
     @IBAction
-    func bugreportClicked(_ sender: NSButton) {
+    func adviseMeClicked(_ sender: NSButton) {
+        
+        NSWorkspace.shared.open(URL(string: "mailto:aksidion@kreimben.com")!)
+    }
+    
+    @IBAction
+    func bugReportClicked(_ sender: NSButton) {
         
         NSWorkspace.shared.open(URL(string: "http://github.com/kreimben/")!)
+    }
+    
+    @IBAction
+    func showHelp(_ sender: NSButton) {
+        
+        let vc = storyboard?.instantiateController(withIdentifier: "HelpView") as! NSViewController
+        
+//        presentAsSheet(vc)
+        presentAsModalWindow(vc)
     }
 }
