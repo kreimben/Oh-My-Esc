@@ -709,8 +709,8 @@
                                     <action selector="checkButtonClicked:" target="XfG-lQ-9wD" id="Xrw-jh-4IX"/>
                                 </connections>
                             </button>
-                            <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMr-xz-06Y">
-                                <rect key="frame" x="109" y="174" width="263" height="20"/>
+                            <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="24" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMr-xz-06Y">
+                                <rect key="frame" x="148" y="174" width="185" height="20"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09a-pj-q6H">
                                         <rect key="frame" x="-2" y="2" width="74" height="16"/>
@@ -721,7 +721,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LQb-oO-g5o">
-                                        <rect key="frame" x="169" y="-4" width="98" height="25"/>
+                                        <rect key="frame" x="91" y="-4" width="98" height="25"/>
                                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ega-Rc-u7A" id="Dm8-eT-tLW">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
@@ -746,6 +746,10 @@
                             </stackView>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6tx-Mi-6Jn">
                                 <rect key="frame" x="9" y="8" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="avV-TF-gil"/>
+                                    <constraint firstAttribute="height" constant="20" id="lJm-T7-iJZ"/>
+                                </constraints>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9JX-3J-D2C">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -774,10 +778,8 @@
                             <constraint firstItem="CVf-Py-OiK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="OxS-9y-FOm"/>
                             <constraint firstItem="rMr-xz-06Y" firstAttribute="top" secondItem="CVf-Py-OiK" secondAttribute="bottom" constant="24" id="V3Y-Wf-b5Q"/>
                             <constraint firstAttribute="bottom" secondItem="6tx-Mi-6Jn" secondAttribute="bottom" constant="12" id="bNQ-SD-nKS"/>
-                            <constraint firstItem="rMr-xz-06Y" firstAttribute="trailing" secondItem="CVf-Py-OiK" secondAttribute="trailing" id="e5o-73-fbs"/>
                             <constraint firstAttribute="bottom" secondItem="j8t-SH-WG8" secondAttribute="bottom" constant="12" id="moh-HQ-1QO"/>
                             <constraint firstAttribute="bottom" secondItem="iZ5-vq-pjU" secondAttribute="bottom" constant="12" id="xKx-Nd-EeD"/>
-                            <constraint firstItem="rMr-xz-06Y" firstAttribute="leading" secondItem="CVf-Py-OiK" secondAttribute="leading" id="y5w-9g-yMb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -787,7 +789,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74" y="255"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Pb6-Ha-qhs">
@@ -814,7 +816,7 @@
                 </viewController>
                 <customObject id="4PF-mA-5zJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="666"/>
+            <point key="canvasLocation" x="638" y="240"/>
         </scene>
     </scenes>
 </document>
