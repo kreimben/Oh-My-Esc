@@ -14,8 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var monitor: Any?
     // END
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-    }
+    func applicationDidFinishLaunching(_ aNotification: Notification) { }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         
