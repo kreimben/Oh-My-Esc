@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514F90D825E793510084789B /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F90D725E793510084789B /* NSImage+Extension.swift */; };
 		51DA77D125A886BA00E6415B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA77D025A886BA00E6415B /* AppDelegate.swift */; };
 		51DA77D325A886BA00E6415B /* MatsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA77D225A886BA00E6415B /* MatsterViewController.swift */; };
 		51DA77D525A886BD00E6415B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DA77D425A886BD00E6415B /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514F90D725E793510084789B /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		51DA77CD25A886BA00E6415B /* Oh-My-Esc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh-My-Esc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DA77D025A886BA00E6415B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DA77D225A886BA00E6415B /* MatsterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatsterViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				51DA77D025A886BA00E6415B /* AppDelegate.swift */,
+				514F90D725E793510084789B /* NSImage+Extension.swift */,
 				51DA77D225A886BA00E6415B /* MatsterViewController.swift */,
 				51FA292625E6AEF90055F6CF /* OMSoundManager.swift */,
 				51DA77D425A886BD00E6415B /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			files = (
 				51FA292725E6AEF90055F6CF /* OMSoundManager.swift in Sources */,
 				51DA77D325A886BA00E6415B /* MatsterViewController.swift in Sources */,
+				514F90D825E793510084789B /* NSImage+Extension.swift in Sources */,
 				51DA77D125A886BA00E6415B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
