@@ -20,9 +20,7 @@ class MatsterViewController: NSViewController {
         if AXIsProcessTrusted() { // If user give accessibility
             print("Success to get accessibility!")
             
-            let mask = NSEvent.EventTypeMask.keyDown
-            
-            let monitor = NSEvent.addGlobalMonitorForEvents(matching: mask) { (event) in
+            let monitor = NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { (event) in
                 
                 switch event.keyCode {
                 case 53:
