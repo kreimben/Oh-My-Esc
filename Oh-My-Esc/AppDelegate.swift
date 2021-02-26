@@ -14,8 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var monitor: Any?
     // END
     
-//    let statusItem = NSStatusBar.system.statusItem(withLength: .greatestFiniteMagnitude)
-//    var popover: NSPopover!
+    let statusItem = NSStatusBar.system.statusItem(withLength: 18)
+    var popover: NSPopover!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -36,37 +36,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.monitor = monitor
         
         // MARK: Implement menu bar app.
-//        if let button = statusItem.button {
+        if let button = statusItem.button {
 //            let isGranted = IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted
-//            button.image = NSImage(named: isGranted ? NSImage.Name("ome_enable") : NSImage.Name("ome.disable"))!.resized(to: NSSize(width: 18, height: 18))
-//            NSLog("menu bar image: \(button.image)")
-//            button.action = #selector(openApp(_:))
-//            fatalError()
-//        } else { fatalError() }
+            button.image = NSImage(named: "AppIcon")!.resized(to: NSSize(width: 18, height: 18))
+//            NSLog("menu bar image: \(String(describing: button.image))")
+            button.action = #selector(openApp(_:))
+        } else { fatalError() }
         
-//        let p = NSPopover()
-//        p.contentSize = NSSize(width: 600, height: 400)
-//        p.behavior = .transient
-//        p.contentViewController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController()!
-        
-//        self.popover = p
+        let p = NSPopover()
+        p.contentSize = NSSize(width: 500, height: 350)
+        p.behavior = .transient
+        p.contentViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "first") as? NSViewController
+        self.popover = p
     }
-//
-//    @objc
-//    func openApp(_ sender: Any?) {
-//        if popover.isShown { closePopover(sender: sender) }
-//        else { showPopover(sender: sender) }
-//    }
-//
-//    func showPopover(sender: Any?) {
-//        if let button = statusItem.button {
-//            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-//        }
-//    }
-//
-//    func closePopover(sender: Any?) {
-//        popover.performClose(sender)
-//    }
+
+    @objc
+    func openApp(_ sender: Any?) {
+        if popover.isShown { closePopover(sender: sender) }
+        else { showPopover(sender: sender) }
+    }
+
+    func showPopover(sender: Any?) {
+        if let button = statusItem.button {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+        }
+    }
+
+    func closePopover(sender: Any?) {
+        popover.performClose(sender)
+    }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         
