@@ -7,9 +7,9 @@
 
 import Cocoa
 
-class OMSoundManager: NSObject {
+class OMESoundManager: NSObject {
     
-    static let shared = OMSoundManager()
+    static let shared = OMESoundManager()
     
     private override init() { }
     

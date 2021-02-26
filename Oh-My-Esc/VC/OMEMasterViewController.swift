@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class MatsterViewController: NSViewController {
+class OMEMasterViewController: NSViewController {
     
     // MARK: @IBOutlet
     @IBOutlet var enableAlertCheckBox: NSButton!
@@ -19,7 +19,7 @@ class MatsterViewController: NSViewController {
 }
 
 // MARK: @IBAction
-extension MatsterViewController {
+extension OMEMasterViewController {
     
     @IBAction
     func adviseMeClicked(_ sender: NSButton) {
