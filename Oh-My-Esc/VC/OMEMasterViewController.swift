@@ -37,6 +37,10 @@ extension OMEMasterViewController {
             panel.canChooseFiles = true
             panel.canChooseDirectories = true
             panel.allowsMultipleSelection = false
+            panel.canResolveUbiquitousConflicts = true
+            panel.canDownloadUbiquitousContents = true
+            panel.isAccessoryViewDisclosed = true
+            panel.makeKey()
             panel.begin { (response) in
                 if response == NSApplication.ModalResponse.OK {
                     print("Selected URL: \(String(describing: panel.urls))")
