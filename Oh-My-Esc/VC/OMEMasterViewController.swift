@@ -15,11 +15,35 @@ class OMEMasterViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initPopUpButton()
+    }
+    
+    private func initPopUpButton() {
+        // TODO: Choice sound files and make it being shown.
     }
 }
 
 // MARK: @IBAction
 extension OMEMasterViewController {
+    
+    @IBAction
+    func choiceSound(_ sender: NSPopUpButton) {
+        
+        let selected = sender.titleOfSelectedItem
+        
+        if selected == "Custom..." {
+            let panel = NSOpenPanel()
+            panel.canChooseFiles = true
+            panel.canChooseDirectories = true
+            panel.allowsMultipleSelection = false
+            panel.begin { (response) in
+                if response == NSApplication.ModalResponse.OK {
+                    print("Selected URL: \(String(describing: panel.urls))")
+                }
+            }
+        }
+    }
     
     @IBAction
     func adviseMeClicked(_ sender: NSButton) {
