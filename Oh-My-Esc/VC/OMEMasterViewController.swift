@@ -34,13 +34,18 @@ extension OMEMasterViewController {
         
         if selected == "Custom..." {
             let panel = NSOpenPanel()
-            panel.canChooseFiles = true
-            panel.canChooseDirectories = true
-            panel.allowsMultipleSelection = false
-            panel.canResolveUbiquitousConflicts = true
+            
+            panel.canChooseFiles                = true
+            panel.canChooseDirectories          = false
+            panel.allowsMultipleSelection       = false
+            panel.canResolveUbiquitousConflicts = false
             panel.canDownloadUbiquitousContents = true
-            panel.isAccessoryViewDisclosed = true
-            panel.makeKey()
+            panel.allowsConcurrentViewDrawing   = true
+            
+            panel.allowedFileTypes = ["mp3"]
+            
+            if panel.canBecomeKey { panel.makeKey() }
+            
             panel.begin { (response) in
                 if response == NSApplication.ModalResponse.OK {
                     print("Selected URL: \(String(describing: panel.urls))")
