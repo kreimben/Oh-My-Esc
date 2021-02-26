@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let p = NSPopover()
         p.contentSize = NSSize(width: 500, height: 350)
-        p.behavior = .transient
+        p.behavior = .semitransient
         p.contentViewController = NSStoryboard(name: "OMEMasterView", bundle: nil).instantiateController(withIdentifier: "first") as? NSViewController
         self.popover = p
     }
