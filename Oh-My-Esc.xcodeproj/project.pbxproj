@@ -11,7 +11,7 @@
 		51DA77D125A886BA00E6415B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA77D025A886BA00E6415B /* AppDelegate.swift */; };
 		51DA77D325A886BA00E6415B /* OMEMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA77D225A886BA00E6415B /* OMEMasterViewController.swift */; };
 		51DA77D525A886BD00E6415B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DA77D425A886BD00E6415B /* Assets.xcassets */; };
-		51DA77D825A886BD00E6415B /* OMEMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DA77D625A886BD00E6415B /* OMEMain.storyboard */; };
+		51DA77D825A886BD00E6415B /* OMEMasterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DA77D625A886BD00E6415B /* OMEMasterView.storyboard */; };
 		51FA292725E6AEF90055F6CF /* OMESoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA292625E6AEF90055F6CF /* OMESoundManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +21,7 @@
 		51DA77D025A886BA00E6415B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DA77D225A886BA00E6415B /* OMEMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMEMasterViewController.swift; sourceTree = "<group>"; };
 		51DA77D425A886BD00E6415B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		51DA77D725A886BD00E6415B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OMEMain.storyboard; sourceTree = "<group>"; };
+		51DA77D725A886BD00E6415B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OMEMasterView.storyboard; sourceTree = "<group>"; };
 		51DA77D925A886BD00E6415B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51DA77DA25A886BD00E6415B /* Oh_My_Esc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Oh_My_Esc.entitlements; sourceTree = "<group>"; };
 		51FA292625E6AEF90055F6CF /* OMESoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMESoundManager.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		51D8036725E927DA00B8E05E /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				51DA77D625A886BD00E6415B /* OMEMain.storyboard */,
+				51DA77D625A886BD00E6415B /* OMEMasterView.storyboard */,
 				51DA77D225A886BA00E6415B /* OMEMasterViewController.swift */,
 			);
 			path = VC;
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51DA77D525A886BD00E6415B /* Assets.xcassets in Resources */,
-				51DA77D825A886BD00E6415B /* OMEMain.storyboard in Resources */,
+				51DA77D825A886BD00E6415B /* OMEMasterView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,12 +172,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		51DA77D625A886BD00E6415B /* OMEMain.storyboard */ = {
+		51DA77D625A886BD00E6415B /* OMEMasterView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				51DA77D725A886BD00E6415B /* Base */,
 			);
-			name = OMEMain.storyboard;
+			name = OMEMasterView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

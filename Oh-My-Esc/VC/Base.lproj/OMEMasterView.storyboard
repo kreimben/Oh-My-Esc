@@ -681,10 +681,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Matster View Controller-->
+        <!--Master View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="first" id="XfG-lQ-9wD" customClass="MatsterViewController" customModule="Oh_My_Esc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="first" id="XfG-lQ-9wD" customClass="OMEMasterViewController" customModule="Oh_My_Esc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -696,7 +696,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="bugReportClicked:" target="XfG-lQ-9wD" id="Gqv-xZ-rUY"/>
+                                    <action selector="bugReportClicked:" target="XfG-lQ-9wD" id="yO1-bD-C6U"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-Py-OiK">
@@ -730,6 +730,9 @@
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
+                                        <connections>
+                                            <action selector="choiceSound:" target="XfG-lQ-9wD" id="wV7-bZ-OUY"/>
+                                        </connections>
                                     </popUpButton>
                                 </subviews>
                                 <visibilityPriorities>
@@ -752,7 +755,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="showHelp:" target="XfG-lQ-9wD" id="IjM-s3-29Z"/>
+                                    <action selector="showHelp:" target="XfG-lQ-9wD" id="eBW-iD-U5i"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-vq-pjU">
@@ -762,7 +765,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="adviseMeClicked:" target="XfG-lQ-9wD" id="JeT-v0-deg"/>
+                                    <action selector="adviseMeClicked:" target="XfG-lQ-9wD" id="FRV-Sj-Pni"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -780,8 +783,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="enableAlertCheckBox" destination="CVf-Py-OiK" id="QGg-mo-GQK"/>
-                        <outlet property="soundSelectionPopUpButton" destination="LQb-oO-g5o" id="XYU-BE-RTS"/>
+                        <outlet property="enableAlertCheckBox" destination="CVf-Py-OiK" id="VF4-69-aLZ"/>
+                        <outlet property="soundSelectionPopUpButton" destination="LQb-oO-g5o" id="EBa-E1-W8f"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

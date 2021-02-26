@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             switch event.keyCode {
             case 53:
-                OMSoundManager.shared.playSound()
+                OMESoundManager.shared.playSound()
             default: break
             }
         }
@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let p = NSPopover()
         p.contentSize = NSSize(width: 500, height: 350)
         p.behavior = .transient
-        p.contentViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "first") as? NSViewController
+        p.contentViewController = NSStoryboard(name: "OMEMasterView", bundle: nil).instantiateController(withIdentifier: "first") as? NSViewController
         self.popover = p
     }
 
