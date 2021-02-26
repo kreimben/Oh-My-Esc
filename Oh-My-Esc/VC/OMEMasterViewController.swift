@@ -58,7 +58,7 @@ extension OMEMasterViewController {
     @IBAction
     func bugReportClicked(_ sender: NSButton) {
         
-        NSWorkspace.shared.open(URL(string: "http://github.com/kreimben/")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/kreimben/Oh-My-Esc/issues")!)
     }
     
     @IBAction
