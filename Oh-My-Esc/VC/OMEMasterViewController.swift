@@ -19,8 +19,45 @@ class OMEMasterViewController: NSViewController {
         self.initPopUpButton()
     }
     
-    private func initPopUpButton() {
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        self.checkUpdate()
+    }
+    
+    private
+    func initPopUpButton() {
         // TODO: Choice sound files and make it being shown.
+    }
+    
+    private
+    func checkUpdate() {
+        OMEUpdater.shared.isAvailableToUpdate { (tag) in
+            print("new version tag info: \(tag)")
+            
+            let alert = NSAlert()
+            
+            alert.messageText = """
+                There is a new version of this app.
+
+                \(tag.name)
+                """
+            
+            alert.addButton(withTitle: "Download new version")
+            alert.addButton(withTitle: "Nope")
+            
+            alert.beginSheetModal(for: self.view.window!) { (response) in
+                switch response {
+                case .alertFirstButtonReturn:
+                    NSWorkspace.shared.open(tag.zipball_url)
+                    
+                case .alertSecondButtonReturn:
+                    print("Second button!")
+                    
+                default: break
+                }
+            }
+        }
     }
 }
 
