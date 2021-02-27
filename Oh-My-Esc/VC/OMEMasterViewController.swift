@@ -65,6 +65,31 @@ class OMEMasterViewController: NSViewController {
 extension OMEMasterViewController {
     
     @IBAction
+    func checkButtonClicked(_ sender: NSButton) {
+        if !self.hasAuth() {
+            self.enableAlertCheckBox.state = .off
+            
+            let alert = NSAlert()
+            
+            alert.messageText = """
+                                You didn't allow this app to access \"Input Monitoring\"!
+
+                                Please check \"Oh My Esc\" in \"Input Monitoring\".
+                                """
+            alert.addButton(withTitle: "Go to Allow")
+            
+            let result = alert.runModal()
+            
+            switch result {
+            case .alertFirstButtonReturn:
+                print("OK")
+                NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy")!)
+            default: break
+            }
+        }
+    }
+    
+    @IBAction
     func choiceSound(_ sender: NSPopUpButton) {
         
         let selected = sender.titleOfSelectedItem
