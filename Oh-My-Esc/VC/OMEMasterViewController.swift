@@ -17,7 +17,12 @@ class OMEMasterViewController: NSViewController {
         super.viewDidLoad()
         
         self.initPopUpButton()
+        
+        if !self.hasAuth() { self.enableAlertCheckBox.state = .off }
     }
+    
+    private
+    func hasAuth() -> Bool { return IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted }
     
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -78,13 +83,13 @@ extension OMEMasterViewController {
                                 """
             alert.addButton(withTitle: "Go to Allow")
             
-            let result = alert.runModal()
-            
-            switch result {
-            case .alertFirstButtonReturn:
-                print("OK")
-                NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy")!)
-            default: break
+            alert.beginSheetModal(for: self.view.window!) { (response) in
+                switch response {
+                case .alertFirstButtonReturn:
+                    print("OK")
+                    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy")!)
+                default: break
+                }
             }
         }
     }
