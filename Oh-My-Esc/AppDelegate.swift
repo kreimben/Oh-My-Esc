@@ -7,7 +7,7 @@
 
 import Cocoa
 
-@main
+@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Common resource for managing mask monitor.
@@ -25,15 +25,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if IOHIDCheckAccess(requestType) != kIOHIDAccessTypeGranted { IOHIDRequestAccess(requestType) }
         
         let monitor = NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { (event) in
-            
+            print("Event: \(String(describing: event))")
             switch event.keyCode {
             case 53:
+                print("ESC!!!")
                 OMESoundManager.shared.playSound()
             default: break
             }
         }
         
         self.monitor = monitor
+        print("monitor info: \(String(describing: monitor))")
         
         // MARK: Implement menu bar app.
         if let button = statusItem.button {
