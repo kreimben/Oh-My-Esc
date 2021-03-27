@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // END
     
     let statusItem = NSStatusBar.system.statusItem(withLength: 18)
-    var popover: NSPopover!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -39,34 +38,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // MARK: Implement menu bar app.
         if let button = statusItem.button {
-//            let isGranted = IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted
+
             button.image = NSImage(named: "AppIcon")!.resized(to: NSSize(width: 18, height: 18))
-//            NSLog("menu bar image: \(String(describing: button.image))")
-            button.action = #selector(openApp(_:))
+            
+            self.setMenu()
+
         } else { fatalError() }
+    }
+    
+    func setMenu() {
         
-        let p = NSPopover()
-        p.contentSize = NSSize(width: 500, height: 350)
-        p.behavior = .semitransient
-        p.contentViewController = NSStoryboard(name: "OMEMasterView", bundle: nil).instantiateController(withIdentifier: "first") as? NSViewController
-        self.popover = p
-    }
+        let m = NSMenu()
 
+        m.title = "Menu"
+
+        let item = NSMenuItem(title: "Quit this app", action: #selector(quit), keyEquivalent: "q")
+
+        m.addItem(item)
+        
+        statusItem.menu = m
+    }
+    
     @objc
-    func openApp(_ sender: Any?) {
-        if popover.isShown { closePopover(sender: sender) }
-        else { showPopover(sender: sender) }
-    }
-
-    func showPopover(sender: Any?) {
-        if let button = statusItem.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-        }
-    }
-
-    func closePopover(sender: Any?) {
-        popover.performClose(sender)
-    }
+    func quit() { exit(-1) }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         
