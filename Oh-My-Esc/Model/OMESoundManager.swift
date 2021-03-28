@@ -35,14 +35,18 @@ class OMESoundManager: NSObject {
     
     func turnOffSound() {
         
-        let monitor = (NSApplication.shared.delegate as! AppDelegate).monitor
+        guard let monitor = (NSApplication.shared.delegate as! AppDelegate).monitor else {
+            return
+        }
         
-        NSEvent.removeMonitor(monitor as Any)
+        NSEvent.removeMonitor(monitor)
+        (NSApplication.shared.delegate as! AppDelegate).monitor = nil
     }
     
     func showStatus() -> Bool {
         
         guard (NSApplication.shared.delegate as! AppDelegate).monitor != nil else {
+            
             return false
         }
         
