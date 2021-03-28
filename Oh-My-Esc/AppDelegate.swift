@@ -49,18 +49,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setMenu() {
         
         let m = NSMenu()
+        
+        let status = NSMenuItem(title: "Status: \(true)", action: #selector(emptyFunction), keyEquivalent: "")
+        status.onStateImage = NSImage(named: NSImage.Name("ome_enable"))
+        status.offStateImage = NSImage(named: NSImage.Name("ome_disable"))
+        
+        m.addItem(status)
 
-        m.title = "Menu"
+        let quit = NSMenuItem(title: "Quit this app", action: #selector(quitThisApp), keyEquivalent: "q")
 
-        let item = NSMenuItem(title: "Quit this app", action: #selector(quit), keyEquivalent: "q")
-
-        m.addItem(item)
+        m.addItem(quit)
         
         statusItem.menu = m
     }
     
     @objc
-    func quit() { exit(-1) }
+    func emptyFunction() {
+        NSLog("Just for debug!")
+    }
+    
+    @objc
+    func quitThisApp() { exit(-1) }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         
