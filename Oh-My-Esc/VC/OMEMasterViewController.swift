@@ -25,6 +25,8 @@ class OMEMasterViewController: NSViewController {
         super.viewWillAppear()
         
         self.checkUpdate()
+        
+        self.enableAlertCheckBox.state = OMESoundManager.shared.showStatus() ? .on : .off
     }
     
     private
