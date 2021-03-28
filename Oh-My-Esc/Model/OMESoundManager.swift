@@ -16,4 +16,36 @@ class OMESoundManager: NSObject {
     func playSound() {
         NSLog("Play Sound!")
     }
+    
+    func turnOnSound() {
+        
+        let monitor = NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { (event) in
+            print("Event: \(String(describing: event))")
+            switch event.keyCode {
+            case 53:
+                print("ESC!!!")
+                OMESoundManager.shared.playSound()
+            default: break
+            }
+        }
+        
+        (NSApplication.shared.delegate as! AppDelegate).monitor = monitor
+        print("monitor info: \(String(describing: monitor))")
+    }
+    
+    func turnOffSound() {
+        
+        let monitor = (NSApplication.shared.delegate as! AppDelegate).monitor
+        
+        NSEvent.removeMonitor(monitor as Any)
+    }
+    
+    func showStatus() -> Bool {
+        
+        guard (NSApplication.shared.delegate as! AppDelegate).monitor != nil else {
+            return false
+        }
+        
+        return true
+    }
 }
