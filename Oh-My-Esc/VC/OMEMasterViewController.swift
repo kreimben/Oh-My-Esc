@@ -12,6 +12,7 @@ class OMEMasterViewController: NSViewController {
     // MARK: @IBOutlet
     @IBOutlet var enableAlertCheckBox: NSButton!
     @IBOutlet var soundSelectionPopUpButton: NSPopUpButton!
+    @IBOutlet var playButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,21 @@ class OMEMasterViewController: NSViewController {
         self.checkUpdate()
         
         self.enableAlertCheckBox.state = OMESoundManager.shared.showStatus() ? .on : .off
+        
+        if self.isAvailableToPlayCustomSound() {
+            self.playButton.isEnabled = true
+            
+            let lastIndex = self.soundSelectionPopUpButton.numberOfItems - 1
+            self.soundSelectionPopUpButton.selectItem(at: lastIndex)
+        }
+    }
+    
+    private
+    func isAvailableToPlayCustomSound() -> Bool {
+        
+        guard UserDefaults.standard.url(forKey: "custom_sound_url") != nil else { return false }
+        
+        return true
     }
     
     private
@@ -129,10 +145,27 @@ extension OMEMasterViewController {
             
             panel.begin { (response) in
                 if response == NSApplication.ModalResponse.OK {
-                    print("Selected URL: \(String(describing: panel.urls))")
+                    print("Selected URL: \(String(describing: panel.url))")
+                    
+                    UserDefaults.standard.set(panel.url!, forKey: "custom_sound_url")
+                    
+                    self.playButton.isEnabled = self.isAvailableToPlayCustomSound() ? true : false
                 }
             }
         }
+    }
+    
+    @IBAction
+    func playSound(_ sender: NSButton) {
+        
+        guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
+        print("Saved url is: \(url)")
+        
+        let sound = NSSound(contentsOf: url, byReference: true)
+        
+        sound?.loops = false
+        
+        sound?.play()
     }
     
     @IBAction
@@ -152,7 +185,7 @@ extension OMEMasterViewController {
         
         let vc = storyboard?.instantiateController(withIdentifier: "HelpView") as! NSViewController
         
-//        presentAsSheet(vc)
+        //        presentAsSheet(vc)
         presentAsModalWindow(vc)
     }
 }
