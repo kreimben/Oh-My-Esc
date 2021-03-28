@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         } else { fatalError() }
         
-        self.statusItem.menu = OMEMenuMaker.setMenu()
+        self.statusItem.menu = OMEMenuMaker.shared.setMenu()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

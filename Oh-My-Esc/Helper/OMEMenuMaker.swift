@@ -9,10 +9,13 @@ import Cocoa
 
 class OMEMenuMaker: NSObject {
     
-    class
+    public static let shared = OMEMenuMaker()
+    
     func setMenu() -> NSMenu {
         
         let m = NSMenu()
+        
+        m.delegate = self
         
         let status = NSMenuItem(title: "Status: \(OMESoundManager.shared.showStatus() ? "On" : "Off")", action: nil, keyEquivalent: "")
 //        status.onStateImage = NSImage(named: NSImage.Name("ome_enable"))
@@ -32,4 +35,13 @@ class OMEMenuMaker: NSObject {
     
     @objc
     func quitThisApp() { exit(-1) }
+}
+
+extension OMEMenuMaker: NSMenuDelegate {
+    
+    func menuWillOpen(_ menu: NSMenu) {
+        NSLog("Menu will open!")
+        
+        menu.update()
+    }
 }
