@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let m = NSMenu()
         
-        let status = NSMenuItem(title: "Status: \(true)", action: #selector(emptyFunction), keyEquivalent: "")
+        let status = NSMenuItem(title: "Status: \(OMEAuth.hasAuth() ? "On" : "Off")", action: #selector(emptyFunction), keyEquivalent: "")
         status.onStateImage = NSImage(named: NSImage.Name("ome_enable"))
         status.offStateImage = NSImage(named: NSImage.Name("ome_disable"))
         
