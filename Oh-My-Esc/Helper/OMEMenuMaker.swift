@@ -27,6 +27,8 @@ class OMEMenuMaker: NSObject {
         m.addItem(NSMenuItem.separator())
 
         let quit = NSMenuItem(title: "Quit this app", action: #selector(quitThisApp), keyEquivalent: "q")
+        
+        quit.target = self
 
         m.addItem(quit)
         
