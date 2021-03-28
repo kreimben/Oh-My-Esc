@@ -117,7 +117,13 @@ extension OMEMasterViewController {
             panel.canDownloadUbiquitousContents = true
             panel.allowsConcurrentViewDrawing   = true
             
-            panel.allowedFileTypes = ["mp3"]
+            panel.allowedFileTypes = [
+                "mp3",
+                "mp4",
+                "wav",
+                "m4a",
+                "aac"
+            ]
             
             if panel.canBecomeKey { panel.makeKey() }
             
