@@ -15,6 +15,15 @@ class OMESoundManager: NSObject {
     
     func playSound() {
         NSLog("Play Sound!")
+        
+        guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
+        print("Saved url is: \(url)")
+        
+        let sound = NSSound(contentsOf: url, byReference: true)
+        
+        sound?.loops = false
+        
+        sound?.play()
     }
     
     func turnOnSound() {

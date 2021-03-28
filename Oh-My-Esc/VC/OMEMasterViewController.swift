@@ -158,14 +158,7 @@ extension OMEMasterViewController {
     @IBAction
     func playSound(_ sender: NSButton) {
         
-        guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
-        print("Saved url is: \(url)")
-        
-        let sound = NSSound(contentsOf: url, byReference: true)
-        
-        sound?.loops = false
-        
-        sound?.play()
+        OMESoundManager.shared.playSound()
     }
     
     @IBAction
