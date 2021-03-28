@@ -735,7 +735,7 @@
                                 </connections>
                             </button>
                             <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="24" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rMr-xz-06Y">
-                                <rect key="frame" x="148" y="174" width="185" height="20"/>
+                                <rect key="frame" x="120" y="174" width="240" height="20"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09a-pj-q6H">
                                         <rect key="frame" x="-2" y="2" width="74" height="16"/>
@@ -762,12 +762,24 @@
                                             <action selector="choiceSound:" target="XfG-lQ-9wD" id="wV7-bZ-OUY"/>
                                         </connections>
                                     </popUpButton>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hT6-8w-mKR">
+                                        <rect key="frame" x="202" y="-7" width="45" height="32"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="play.circle.fill" catalog="system" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" inset="2" id="MPb-tA-bFM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="playSound:" target="XfG-lQ-9wD" id="rKR-or-m6b"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -812,6 +824,7 @@
                     </view>
                     <connections>
                         <outlet property="enableAlertCheckBox" destination="CVf-Py-OiK" id="VF4-69-aLZ"/>
+                        <outlet property="playButton" destination="hT6-8w-mKR" id="dgd-iy-WCo"/>
                         <outlet property="soundSelectionPopUpButton" destination="LQb-oO-g5o" id="EBa-E1-W8f"/>
                     </connections>
                 </viewController>
@@ -847,4 +860,7 @@
             <point key="canvasLocation" x="638" y="240"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="15" height="15"/>
+    </resources>
 </document>
