@@ -90,6 +90,15 @@ extension OMEMasterViewController {
                 default: break
                 }
             }
+        } else {
+            
+            let status = OMESoundManager.shared.showStatus()
+            
+            if !status {
+                OMESoundManager.shared.turnOnSound()
+            } else {
+                OMESoundManager.shared.turnOffSound()
+            }
         }
     }
     
