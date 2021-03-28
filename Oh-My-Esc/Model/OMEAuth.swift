@@ -10,5 +10,5 @@ import Cocoa
 class OMEAuth: NSObject {
     
     class
-    func hasAuth() -> Bool { return IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted }
+    func hasAuth() -> Bool { return AXIsProcessTrusted() }
 }
