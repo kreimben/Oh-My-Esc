@@ -19,9 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // MARK: Check accessibility and Add monitor.
-        if !AXIsProcessTrusted() {
-            IOHIDRequestAccess(.init(0))
-        }
+        if !AXIsProcessTrusted() { IOHIDRequestAccess(.init(0)) }
         
         // MARK: Implement menu bar app.
         if let button = statusItem.button {
