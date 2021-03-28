@@ -50,9 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let m = NSMenu()
         
-        let status = NSMenuItem(title: "Status: \(OMEAuth.hasAuth() ? "On" : "Off")", action: #selector(emptyFunction), keyEquivalent: "")
+        let status = NSMenuItem(title: "Status: \(OMEAuth.hasAuth() ? "On" : "Off")", action: nil, keyEquivalent: "")
         status.onStateImage = NSImage(named: NSImage.Name("ome_enable"))
         status.offStateImage = NSImage(named: NSImage.Name("ome_disable"))
+        status.state = OMEAuth.hasAuth() ? .on : .off
         
         m.addItem(status)
 
@@ -61,11 +62,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         m.addItem(quit)
         
         statusItem.menu = m
-    }
-    
-    @objc
-    func emptyFunction() {
-        NSLog("Just for debug!")
     }
     
     @objc
