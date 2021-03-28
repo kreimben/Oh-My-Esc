@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		511AE6BA2610B59D002ED3AD /* OMEAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE6B92610B59D002ED3AD /* OMEAuth.swift */; };
 		514F90D825E793510084789B /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F90D725E793510084789B /* NSImage+Extension.swift */; };
 		51D8036E25E9C72F00B8E05E /* OMEUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8036D25E9C72F00B8E05E /* OMEUpdater.swift */; };
 		51D8037225E9CDA900B8E05E /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8037125E9CDA900B8E05E /* Notification.Name+Extension.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		511AE6B92610B59D002ED3AD /* OMEAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMEAuth.swift; sourceTree = "<group>"; };
 		514F90D725E793510084789B /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		51D8036D25E9C72F00B8E05E /* OMEUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OMEUpdater.swift; path = "Oh-My-Esc/Model/OMEUpdater.swift"; sourceTree = SOURCE_ROOT; };
 		51D8037125E9CDA900B8E05E /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				51FA292625E6AEF90055F6CF /* OMESoundManager.swift */,
 				51D8036D25E9C72F00B8E05E /* OMEUpdater.swift */,
 				51D8037425E9E61A00B8E05E /* OMETag.swift */,
+				511AE6B92610B59D002ED3AD /* OMEAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				51D8037225E9CDA900B8E05E /* Notification.Name+Extension.swift in Sources */,
 				51FA292725E6AEF90055F6CF /* OMESoundManager.swift in Sources */,
 				51DA77D325A886BA00E6415B /* OMEMasterViewController.swift in Sources */,
+				511AE6BA2610B59D002ED3AD /* OMEAuth.swift in Sources */,
 				51D8037525E9E61A00B8E05E /* OMETag.swift in Sources */,
 				514F90D825E793510084789B /* NSImage+Extension.swift in Sources */,
 				51DA77D125A886BA00E6415B /* AppDelegate.swift in Sources */,

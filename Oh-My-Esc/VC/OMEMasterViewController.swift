@@ -18,11 +18,8 @@ class OMEMasterViewController: NSViewController {
         
         self.initPopUpButton()
         
-        if !self.hasAuth() { self.enableAlertCheckBox.state = .off }
+        if !OMEAuth.hasAuth() { self.enableAlertCheckBox.state = .off }
     }
-    
-    private
-    func hasAuth() -> Bool { return IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted }
     
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -71,7 +68,7 @@ extension OMEMasterViewController {
     
     @IBAction
     func checkButtonClicked(_ sender: NSButton) {
-        if !self.hasAuth() {
+        if !OMEAuth.hasAuth() {
             self.enableAlertCheckBox.state = .off
             
             let alert = NSAlert()
