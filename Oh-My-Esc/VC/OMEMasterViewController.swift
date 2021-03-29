@@ -25,6 +25,8 @@ class OMEMasterViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
+        self.initSelection()
+        
         self.checkUpdate()
         
         self.enableAlertCheckBox.state = OMESoundManager.shared.showStatus() ? .on : .off
@@ -35,6 +37,17 @@ class OMEMasterViewController: NSViewController {
             let lastIndex = self.soundSelectionPopUpButton.numberOfItems - 1
             self.soundSelectionPopUpButton.selectItem(at: lastIndex)
         }
+    }
+    
+    private
+    func initSelection() {
+        
+        let b = self.soundSelectionPopUpButton!
+        
+        // delete default items first.
+        b.removeAllItems()
+        
+        b.addItems(withTitles: OMESoundManager.sounds)
     }
     
     private
@@ -152,6 +165,9 @@ extension OMEMasterViewController {
                     self.playButton.isEnabled = self.isAvailableToPlayCustomSound() ? true : false
                 }
             }
+        } else { // Default sounds.
+            
+            self.playButton.isEnabled = true
         }
     }
     

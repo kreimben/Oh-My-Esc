@@ -11,6 +11,12 @@ class OMESoundManager: NSObject {
     
     static let shared = OMESoundManager()
     
+    public static let sounds = ["Ding",
+                                "Mooyaho Classic",
+                                "Mooyaho 2021",
+                                
+                                "Custom..."]
+    
     private override init() { }
     
     func playSound() {

@@ -747,13 +747,13 @@
                                     </textField>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LQb-oO-g5o">
                                         <rect key="frame" x="91" y="-4" width="98" height="25"/>
-                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ega-Rc-u7A" id="Dm8-eT-tLW">
+                                        <popUpButtonCell key="cell" type="push" title="Ding" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ega-Rc-u7A" id="Dm8-eT-tLW">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="3fL-Um-WoY">
                                                 <items>
-                                                    <menuItem title="Item 1" state="on" id="ega-Rc-u7A"/>
-                                                    <menuItem title="Item 2" id="W3v-84-gHr"/>
+                                                    <menuItem title="Ding" state="on" id="ega-Rc-u7A" userLabel="Ding"/>
+                                                    <menuItem title="Mooyaho" id="W3v-84-gHr"/>
                                                     <menuItem title="Custom..." id="BfG-r6-UoZ"/>
                                                 </items>
                                             </menu>
