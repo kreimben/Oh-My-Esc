@@ -1,0 +1,13 @@
+{
+  "data" : [
+    {
+      "filename" : "OME_ding.wav",
+      "idiom" : "universal",
+      "universal-type-identifier" : "wav"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
