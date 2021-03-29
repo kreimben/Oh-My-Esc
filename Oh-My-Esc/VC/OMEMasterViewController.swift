@@ -33,10 +33,7 @@ class OMEMasterViewController: NSViewController {
         
         if self.isAvailableToPlayCustomSound() {
             self.playButton.isEnabled = true
-            
-            let lastIndex = self.soundSelectionPopUpButton.numberOfItems - 1
-            self.soundSelectionPopUpButton.selectItem(at: lastIndex)
-        }
+        } else { self.playButton.isEnabled = false }
     }
     
     private
@@ -48,12 +45,22 @@ class OMEMasterViewController: NSViewController {
         b.removeAllItems()
         
         b.addItems(withTitles: OMESoundManager.sounds)
+        
+        if UserDefaults.standard.url(forKey: "custom_sound_url") != nil {
+            b.selectItem(at: b.numberOfItems - 1)
+        } else {
+            b.selectItem(at: 0)
+        }
+        
+        OMESoundManager.shared.selected = b.titleOfSelectedItem!
     }
     
     private
     func isAvailableToPlayCustomSound() -> Bool {
         
-        guard UserDefaults.standard.url(forKey: "custom_sound_url") != nil else { return false }
+        if self.soundSelectionPopUpButton.titleOfSelectedItem! == "Custom..." {
+            guard UserDefaults.standard.url(forKey: "custom_sound_url") != nil else { return false }
+        }
         
         return true
     }
@@ -171,6 +178,7 @@ extension OMEMasterViewController {
         } else { // Default sounds.
             
             OMESoundManager.shared.selected = sender.titleOfSelectedItem!
+            UserDefaults.standard.removeObject(forKey: "custom_sound_url")
             self.playButton.isEnabled = true
         }
     }
