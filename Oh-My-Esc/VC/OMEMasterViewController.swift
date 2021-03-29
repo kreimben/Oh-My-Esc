@@ -174,7 +174,13 @@ extension OMEMasterViewController {
     @IBAction
     func playSound(_ sender: NSButton) {
         
-        OMESoundManager.shared.playCustomSound()
+        guard let title = self.soundSelectionPopUpButton.titleOfSelectedItem else { return }
+        
+        if title == "Custom..." {
+            OMESoundManager.shared.playCustomSound()
+        } else {
+            OMESoundManager.shared.playDefaultSound(title)
+        }
     }
     
     @IBAction
