@@ -32,12 +32,12 @@ class OMESoundManager: NSObject {
             sound.play()
             
         case "Mooyaho Classic":
-            guard let a = NSDataAsset(name: "OME_ding") else { fatalError() }
+            guard let a = NSDataAsset(name: "OME_mooyaho_Classic") else { fatalError() }
             guard let sound = NSSound(data: a.data) else { fatalError() }
             sound.play()
             
         case "Mooyaho 2021":
-            guard let a = NSDataAsset(name: "OME_moyaho_2021") else { fatalError() }
+            guard let a = NSDataAsset(name: "OME_mooyaho_2021") else { fatalError() }
             guard let sound = NSSound(data: a.data) else { fatalError() }
             sound.play()
             
