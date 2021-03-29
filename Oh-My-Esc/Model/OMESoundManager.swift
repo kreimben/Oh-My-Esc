@@ -19,7 +19,7 @@ class OMESoundManager: NSObject {
     
     private override init() { }
     
-    func playSound() {
+    func playCustomSound() {
         NSLog("Play Sound!")
         
         guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
@@ -39,7 +39,7 @@ class OMESoundManager: NSObject {
             switch event.keyCode {
             case 53:
                 print("ESC!!!")
-                OMESoundManager.shared.playSound()
+                OMESoundManager.shared.playCustomSound()
             default: break
             }
         }

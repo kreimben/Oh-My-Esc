@@ -174,7 +174,7 @@ extension OMEMasterViewController {
     @IBAction
     func playSound(_ sender: NSButton) {
         
-        OMESoundManager.shared.playSound()
+        OMESoundManager.shared.playCustomSound()
     }
     
     @IBAction
