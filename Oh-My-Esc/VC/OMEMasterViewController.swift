@@ -134,6 +134,8 @@ extension OMEMasterViewController {
     @IBAction
     func choiceSound(_ sender: NSPopUpButton) {
         
+        self.playButton.isEnabled = false
+        
         let selected = sender.titleOfSelectedItem
         
         if selected == "Custom..." {
@@ -163,10 +165,12 @@ extension OMEMasterViewController {
                     UserDefaults.standard.set(panel.url!, forKey: "custom_sound_url")
                     
                     self.playButton.isEnabled = self.isAvailableToPlayCustomSound() ? true : false
+                    OMESoundManager.shared.selected = ""
                 }
             }
         } else { // Default sounds.
             
+            OMESoundManager.shared.selected = sender.titleOfSelectedItem!
             self.playButton.isEnabled = true
         }
     }
@@ -174,13 +178,7 @@ extension OMEMasterViewController {
     @IBAction
     func playSound(_ sender: NSButton) {
         
-        guard let title = self.soundSelectionPopUpButton.titleOfSelectedItem else { return }
-        
-        if title == "Custom..." {
-            OMESoundManager.shared.playCustomSound()
-        } else {
-            OMESoundManager.shared.playDefaultSound(title)
-        }
+        OMESoundManager.shared.playSound()
     }
     
     @IBAction

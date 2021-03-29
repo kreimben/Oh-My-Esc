@@ -11,25 +11,44 @@ class OMESoundManager: NSObject {
     
     static let shared = OMESoundManager()
     
+    var selected = ""
+    
     public static let sounds = ["Ding",
                                 "Mooyaho Classic",
                                 "Mooyaho 2021",
+                                "Beep",
                                 
                                 "Custom..."]
     
     private override init() { }
     
-    func playCustomSound() {
-        NSLog("Play Sound!")
+    func playSound() {
         
-        guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
-        print("Saved url is: \(url)")
+        switch self.selected {
         
-        let sound = NSSound(contentsOf: url, byReference: true)
-        
-        sound?.loops = false
-        
-        sound?.play()
+        case "Ding":
+            guard let a = NSDataAsset(name: "OME_ding") else { fatalError() }
+            guard let sound = NSSound(data: a.data) else { fatalError() }
+            sound.play()
+            
+        case "Mooyaho Classic":
+            guard let a = NSDataAsset(name: "OME_ding") else { fatalError() }
+            guard let sound = NSSound(data: a.data) else { fatalError() }
+            sound.play()
+            
+        case "Mooyaho 2021":
+            guard let a = NSDataAsset(name: "OME_moyaho_2021") else { fatalError() }
+            guard let sound = NSSound(data: a.data) else { fatalError() }
+            sound.play()
+            
+        case "Beep":
+            NSSound.beep()
+            
+        default:
+            guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
+            guard let sound = NSSound(contentsOf: url, byReference: true) else { fatalError() }
+            sound.play()
+        }
     }
     
     func turnOnSound() {
@@ -39,7 +58,7 @@ class OMESoundManager: NSObject {
             switch event.keyCode {
             case 53:
                 print("ESC!!!")
-                OMESoundManager.shared.playCustomSound()
+                OMESoundManager.shared.playSound()
             default: break
             }
         }
