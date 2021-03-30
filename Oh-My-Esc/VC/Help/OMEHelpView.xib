@@ -37,15 +37,15 @@
                 </textField>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bmJ-nt-wHI">
                     <rect key="frame" x="10" y="152" width="460" height="16"/>
-                    <textFieldCell key="cell" selectable="YES" alignment="center" title="Don't worry when you press Esc key! " id="czh-wK-Wit">
+                    <textFieldCell key="cell" selectable="YES" alignment="center" title="Esc key is so special that we can't easely ignore." id="czh-wK-Wit">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="USc-QG-RFb">
-                    <rect key="frame" x="57" y="130" width="366" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="'Oh My Esc' will make you free from stress of TouchBar Esc!" id="hmB-Cf-eXa">
+                    <rect key="frame" x="47" y="130" width="386" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="But sometimes Esc key on TouchBar don't seem to be pressed." id="hmB-Cf-eXa">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
