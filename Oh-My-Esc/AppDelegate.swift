@@ -36,6 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+// MARK: ETC Functions
 extension AppDelegate {
     
     @objc
