@@ -46,7 +46,11 @@ class OMESoundManager: NSObject {
             
         default:
             guard let url = UserDefaults.standard.url(forKey: "custom_sound_url") else { fatalError() }
-            guard let sound = NSSound(contentsOf: url, byReference: true) else { fatalError() }
+            print("URL: \(url)")
+            guard let sound = NSSound(contentsOf: url, byReference: true) else {
+                NotificationCenter.default.post(name: .alertFileNotFound, object: nil)
+                return
+            }
             sound.play()
         }
     }

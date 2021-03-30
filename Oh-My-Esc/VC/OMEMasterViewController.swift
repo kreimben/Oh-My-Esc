@@ -20,6 +20,9 @@ class OMEMasterViewController: NSViewController {
         self.initPopUpButton()
         
         if !OMEAuth.hasAuth() { self.enableAlertCheckBox.state = .off }
+        
+        // Add observer for ```fileNotFound```.
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyAlertFileNotFound), name: .alertFileNotFound, object: nil)
     }
     
     override func viewWillAppear() {
@@ -98,6 +101,17 @@ class OMEMasterViewController: NSViewController {
                 }
             }
         }
+    }
+    
+    @objc
+    func notifyAlertFileNotFound() {
+        
+        let alert = NSAlert()
+        
+        alert.messageText = "Alert! File not found! Please select another sound!"
+        alert.addButton(withTitle: "OK")
+        
+        alert.runModal()
     }
 }
 
