@@ -18,15 +18,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStatusBarIcon), name: .updateStatusBarIcon, object: nil)
+        
         // MARK: Check accessibility and Add monitor.
         if !AXIsProcessTrusted() { IOHIDRequestAccess(.init(0)) }
         
-        // MARK: Implement menu bar app.
-        if let button = statusItem.button {
-
-            button.image = NSImage(named: "AppIcon")!.resized(to: NSSize(width: 18, height: 18))
-
-        } else { fatalError() }
+        // MARK: Implement menu bar app.        
+        self.updateStatusBarIcon()
         
         self.statusItem.menu = OMEMenuMaker.shared.setMenu()
     }
@@ -38,3 +36,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+extension AppDelegate {
+    
+    @objc
+    func updateStatusBarIcon() {
+        
+        if let button = statusItem.button {
+            
+            let properSize = NSSize(width: 18, height: 18)
+            
+            let enable  = #imageLiteral(resourceName: "OME_Enable_Icon").resized(to: properSize)
+            let disable = #imageLiteral(resourceName: "OME_Disable_Icon").resized(to: properSize)
+            
+            button.image = OMESoundManager.shared.showStatus() ? enable : disable
+        }
+    }
+}

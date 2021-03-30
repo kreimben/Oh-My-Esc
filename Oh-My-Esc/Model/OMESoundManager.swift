@@ -65,6 +65,8 @@ class OMESoundManager: NSObject {
         
         (NSApplication.shared.delegate as! AppDelegate).monitor = monitor
         print("monitor info: \(String(describing: monitor))")
+        
+        NotificationCenter.default.post(name: .updateStatusBarIcon, object: nil)
     }
     
     func turnOffSound() {
@@ -75,6 +77,8 @@ class OMESoundManager: NSObject {
         
         NSEvent.removeMonitor(monitor)
         (NSApplication.shared.delegate as! AppDelegate).monitor = nil
+        
+        NotificationCenter.default.post(name: .updateStatusBarIcon, object: nil)
     }
     
     func showStatus() -> Bool {
