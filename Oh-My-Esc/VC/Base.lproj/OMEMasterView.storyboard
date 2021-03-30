@@ -684,11 +684,10 @@
         <!--Window Controller-->
         <scene sceneID="siK-hv-62V">
             <objects>
-                <windowController id="bJI-h6-Eu2" sceneMemberID="viewController">
-                    <window key="window" title="Oh My ESC" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="GAs-Jf-fQB">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="249" width="480" height="270"/>
+                <windowController showSeguePresentationStyle="single" id="bJI-h6-Eu2" sceneMemberID="viewController">
+                    <window key="window" title="Oh My ESC" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="GAs-Jf-fQB">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="519" y="309" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
                         <view key="contentView" id="8Qr-YX-4wz">
                             <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
