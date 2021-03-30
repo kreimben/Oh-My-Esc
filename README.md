@@ -1,4 +1,11 @@
 # Oh My ESC!
 
-This application is maded and intended to use for Touch Bar models of MacBook Pro.
-When you press ESC key, designated sound will play.
+Esc key is so special that we can't ignore.
+
+But sometimes Esc key on TouchBar don't seem to be pressed.
+
+This app will play sound when you press Esc key.
+
+
+
+Set your own sound and enjoy :)
