@@ -10,6 +10,8 @@
 		511AE6BA2610B59D002ED3AD /* OMEAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE6B92610B59D002ED3AD /* OMEAuth.swift */; };
 		511AE6BE2610BEAA002ED3AD /* OMEMenuMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE6BD2610BEAA002ED3AD /* OMEMenuMaker.swift */; };
 		514F90D825E793510084789B /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F90D725E793510084789B /* NSImage+Extension.swift */; };
+		51C254962612D7CB0066C0B4 /* OMEHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C254942612D7CB0066C0B4 /* OMEHelpViewController.swift */; };
+		51C254972612D7CB0066C0B4 /* OMEHelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C254952612D7CB0066C0B4 /* OMEHelpView.xib */; };
 		51D8036E25E9C72F00B8E05E /* OMEUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8036D25E9C72F00B8E05E /* OMEUpdater.swift */; };
 		51D8037225E9CDA900B8E05E /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8037125E9CDA900B8E05E /* Notification.Name+Extension.swift */; };
 		51D8037525E9E61A00B8E05E /* OMETag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8037425E9E61A00B8E05E /* OMETag.swift */; };
@@ -24,6 +26,8 @@
 		511AE6B92610B59D002ED3AD /* OMEAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMEAuth.swift; sourceTree = "<group>"; };
 		511AE6BD2610BEAA002ED3AD /* OMEMenuMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMEMenuMaker.swift; sourceTree = "<group>"; };
 		514F90D725E793510084789B /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
+		51C254942612D7CB0066C0B4 /* OMEHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMEHelpViewController.swift; sourceTree = "<group>"; };
+		51C254952612D7CB0066C0B4 /* OMEHelpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OMEHelpView.xib; sourceTree = "<group>"; };
 		51D8036D25E9C72F00B8E05E /* OMEUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OMEUpdater.swift; path = "Oh-My-Esc/Model/OMEUpdater.swift"; sourceTree = SOURCE_ROOT; };
 		51D8037125E9CDA900B8E05E /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
 		51D8037425E9E61A00B8E05E /* OMETag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMETag.swift; sourceTree = "<group>"; };
@@ -56,6 +60,24 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		51C254922612D7B00066C0B4 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				51DA77D625A886BD00E6415B /* OMEMasterView.storyboard */,
+				51DA77D225A886BA00E6415B /* OMEMasterViewController.swift */,
+			);
+			path = Master;
+			sourceTree = "<group>";
+		};
+		51C254992612D7CF0066C0B4 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				51C254942612D7CB0066C0B4 /* OMEHelpViewController.swift */,
+				51C254952612D7CB0066C0B4 /* OMEHelpView.xib */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		51D8036325E927B600B8E05E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +101,8 @@
 		51D8036725E927DA00B8E05E /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				51DA77D625A886BD00E6415B /* OMEMasterView.storyboard */,
-				51DA77D225A886BA00E6415B /* OMEMasterViewController.swift */,
+				51C254922612D7B00066C0B4 /* Master */,
+				51C254992612D7CF0066C0B4 /* Help */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -173,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C254972612D7CB0066C0B4 /* OMEHelpView.xib in Resources */,
 				51DA77D525A886BD00E6415B /* Assets.xcassets in Resources */,
 				51DA77D825A886BD00E6415B /* OMEMasterView.storyboard in Resources */,
 			);
@@ -188,6 +211,7 @@
 				511AE6BE2610BEAA002ED3AD /* OMEMenuMaker.swift in Sources */,
 				51D8037225E9CDA900B8E05E /* Notification.Name+Extension.swift in Sources */,
 				51FA292725E6AEF90055F6CF /* OMESoundManager.swift in Sources */,
+				51C254962612D7CB0066C0B4 /* OMEHelpViewController.swift in Sources */,
 				51DA77D325A886BA00E6415B /* OMEMasterViewController.swift in Sources */,
 				511AE6BA2610B59D002ED3AD /* OMEAuth.swift in Sources */,
 				51D8037525E9E61A00B8E05E /* OMETag.swift in Sources */,

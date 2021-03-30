@@ -216,9 +216,9 @@ extension OMEMasterViewController {
     @IBAction
     func showHelp(_ sender: NSButton) {
         
-        let vc = storyboard?.instantiateController(withIdentifier: "HelpView") as! NSViewController
+        let vc = OMEHelpViewController(nibName: "OMEHelpView", bundle: nil)
         
-        //        presentAsSheet(vc)
-        presentAsModalWindow(vc)
+        self.presentAsSheet(vc)
+        
     }
 }

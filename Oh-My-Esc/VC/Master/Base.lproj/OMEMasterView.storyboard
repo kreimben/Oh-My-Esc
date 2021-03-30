@@ -831,33 +831,6 @@
             </objects>
             <point key="canvasLocation" x="74" y="628"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Pb6-Ha-qhs">
-            <objects>
-                <viewController storyboardIdentifier="HelpView" showSeguePresentationStyle="single" id="rF0-J3-o5y" sceneMemberID="viewController">
-                    <view key="view" id="sZN-m3-YCR">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3zB-6E-QD6">
-                                <rect key="frame" x="193" y="142" width="65" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Help label" id="GSW-s3-Ed5">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="3zB-6E-QD6" firstAttribute="centerY" secondItem="sZN-m3-YCR" secondAttribute="centerY" id="fVK-ps-4IK"/>
-                            <constraint firstItem="3zB-6E-QD6" firstAttribute="centerX" secondItem="sZN-m3-YCR" secondAttribute="centerX" id="zvU-KQ-cob"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="4PF-mA-5zJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="638" y="240"/>
-        </scene>
     </scenes>
     <resources>
         <image name="play.circle.fill" catalog="system" width="15" height="15"/>
