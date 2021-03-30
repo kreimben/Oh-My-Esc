@@ -56,6 +56,8 @@ class OMEMenuMaker: NSObject {
     func openApp() {
         guard let vc = NSStoryboard(name: "OMEMasterView", bundle: nil).instantiateInitialController() as? NSWindowController else { fatalError() }
         
+        vc.window?.makeKeyAndOrderFront(self)
+        
         vc.showWindow(self)
     }
     
