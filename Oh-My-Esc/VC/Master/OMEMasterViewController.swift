@@ -53,6 +53,7 @@ class OMEMasterViewController: NSViewController {
             b.selectItem(at: b.numberOfItems - 1)
         } else {
             b.selectItem(at: OMESoundManager.shared.selected ?? 0)
+            OMESoundManager.shared.selected = 0
         }
     }
     
