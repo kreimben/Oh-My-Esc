@@ -11,7 +11,7 @@ class OMESoundManager: NSObject {
     
     static let shared = OMESoundManager()
     
-    var selected = ""
+    var selected: Int?
     
     public static let sounds = ["Ding",
                                 "Mooyaho Classic",
@@ -26,22 +26,22 @@ class OMESoundManager: NSObject {
         
         switch self.selected {
         
-        case "Ding":
+        case 0://"Ding"
             guard let a = NSDataAsset(name: "OME_ding") else { fatalError() }
             guard let sound = NSSound(data: a.data) else { fatalError() }
             sound.play()
             
-        case "Mooyaho Classic":
+        case 1://"Mooyaho Classic"
             guard let a = NSDataAsset(name: "OME_mooyaho_Classic") else { fatalError() }
             guard let sound = NSSound(data: a.data) else { fatalError() }
             sound.play()
             
-        case "Mooyaho 2021":
+        case 2://"Mooyaho 2021"
             guard let a = NSDataAsset(name: "OME_mooyaho_2021") else { fatalError() }
             guard let sound = NSSound(data: a.data) else { fatalError() }
             sound.play()
             
-        case "Beep":
+        case 3://"Beep"
             NSSound.beep()
             
         default:

@@ -52,10 +52,8 @@ class OMEMasterViewController: NSViewController {
         if UserDefaults.standard.url(forKey: "custom_sound_url") != nil {
             b.selectItem(at: b.numberOfItems - 1)
         } else {
-            b.selectItem(at: 0)
+            b.selectItem(at: OMESoundManager.shared.selected ?? 0)
         }
-        
-        OMESoundManager.shared.selected = b.titleOfSelectedItem!
     }
     
     private
@@ -186,12 +184,12 @@ extension OMEMasterViewController {
                     UserDefaults.standard.set(panel.url!, forKey: "custom_sound_url")
                     
                     self.playButton.isEnabled = self.isAvailableToPlayCustomSound() ? true : false
-                    OMESoundManager.shared.selected = ""
+                    OMESoundManager.shared.selected = nil
                 }
             }
         } else { // Default sounds.
             
-            OMESoundManager.shared.selected = sender.titleOfSelectedItem!
+            OMESoundManager.shared.selected = sender.indexOfSelectedItem
             UserDefaults.standard.removeObject(forKey: "custom_sound_url")
             self.playButton.isEnabled = true
         }
