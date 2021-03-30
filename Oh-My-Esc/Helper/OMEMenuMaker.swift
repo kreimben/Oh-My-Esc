@@ -19,9 +19,18 @@ class OMEMenuMaker: NSObject {
         
         m.delegate = self
         
+        let openThisApp = NSMenuItem(title: "Open this app", action: #selector(openApp), keyEquivalent: "")
+        
+        openThisApp.target = self
+        
+        m.addItem(openThisApp)
+        
         let status = NSMenuItem(title: "", action: nil, keyEquivalent: "")
         
         self.statusMenu = status
+        
+        status.target = self
+        status.action = #selector(changeStatus)
         m.addItem(status)
         
         m.addItem(NSMenuItem.separator())
@@ -41,6 +50,23 @@ class OMEMenuMaker: NSObject {
         
         self.statusMenu!.title = "Status: \(status ? "On" : "Off")"
         self.statusMenu!.state = status ? .on : .off
+    }
+    
+    @objc
+    func openApp() {
+        guard let vc = NSStoryboard(name: "OMEMasterView", bundle: nil).instantiateInitialController() as? NSWindowController else { fatalError() }
+        
+        vc.showWindow(self)
+    }
+    
+    @objc
+    func changeStatus() {
+        
+        if OMESoundManager.shared.showStatus() {
+            OMESoundManager.shared.turnOffSound()
+        } else {
+            OMESoundManager.shared.turnOnSound()
+        }
     }
     
     @objc
